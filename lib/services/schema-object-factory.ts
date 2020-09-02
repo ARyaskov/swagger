@@ -110,6 +110,11 @@ export class SchemaObjectFactory {
     if (this.isLazyTypeFunc(type as Function)) {
       type = (type as Function)();
     }
+
+    if (!type) {
+      return '';
+    }
+
     const { prototype } = type;
     if (!prototype) {
       return '';
